@@ -1,0 +1,15 @@
+{
+  "name": "sculptley",
+  "version": "0.0.1",
+  "description": "Artist/Sculpter portfolio website",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "up:dev": "docker-compose up --build",
+    "down": "docker-compose down"
+  },
+  "author": "xley",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
