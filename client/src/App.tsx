@@ -1,6 +1,7 @@
 import "./App.css";
 import About from "./pages/About/About";
 import Art from "./pages/Art/Art";
+import Connect from "./pages/Connect/Connect";
 import Home from "./pages/Home/Home";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Home />
       <About />
       <Art />
+      <Connect />
     </div>
   );
 }
