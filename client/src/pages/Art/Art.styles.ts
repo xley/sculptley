@@ -1,4 +1,11 @@
 import styled from "styled-components";
+import { ArrowRightS } from "@styled-icons/remix-line/ArrowRightS";
+
+export const ArrowIcon = styled(ArrowRightS)`
+  color: black;
+  height: 4vh;
+  border-bottom: 0;
+`;
 
 export const Wrapper = styled.div`
   margin: 2rem;
@@ -18,7 +25,8 @@ export const SectionHeader = styled.h1`
 export const ArtSection = styled.div`
   border: 1px solid black;
   padding: 1rem;
-  width: 100%; // For some reason this is required in my ArtSection but not in your AboutSection. Otherwise there is a gap on the right, couldn't find difference in code.
+  width: 100%;
+  min-width: 300px;
 `;
 
 export const StyledTitle = styled.h1`
@@ -41,7 +49,6 @@ export const StyledCompany = styled.h2`
 
 export const StyledDetailDiv = styled.div`
   justify-content: center;
-  /* width: 100%; */
 `;
 
 export const StyledDetail = styled.h3`
@@ -51,7 +58,7 @@ export const StyledDetail = styled.h3`
   font-weight: normal;
   display: inline-block;
   text-align: center;
-  margin: 0 auto 0.75rem auto;
+  margin: 1rem;
   width: 15%;
 `;
 
@@ -67,11 +74,16 @@ export const StyledBlurb = styled.p`
 `;
 
 export const StyledButton = styled.button`
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
   float: right;
   margin: 1rem;
   border: none;
-  border-bottom: 1px solid black;
   cursor: pointer;
   background-color: transparent;
+`;
+
+export const StyledButtonText = styled.p`
+  border-bottom: 1px solid black;
+  font-size: 1.5rem;
 `;

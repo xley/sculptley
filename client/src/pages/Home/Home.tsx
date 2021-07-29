@@ -7,7 +7,6 @@ import {
   StyledTitle,
   Wrapper,
 } from "./Home.styles";
-import { ArrowRightS } from "@styled-icons/remix-line/ArrowRightS";
 function Home() {
   return (
     <Wrapper>
