@@ -7,7 +7,12 @@ import {
   StyledTitle,
   Wrapper,
 } from "./Home.styles";
-function Home() {
+
+interface Props {
+  scrollTo: Function;
+}
+
+function Home({ scrollTo }: Props) {
   return (
     <Wrapper>
       <StyledImage>
@@ -16,7 +21,7 @@ function Home() {
           <StyledLastName>CROSSLEY</StyledLastName>
         </StyledTitle>
         <StyledSlogan>ARTIST | SCULPTOR | CREATOR</StyledSlogan>
-        <StyledButton>CONNECT</StyledButton>
+        <StyledButton onClick={() => scrollTo()}>CONNECT</StyledButton>
       </StyledImage>
     </Wrapper>
   );
