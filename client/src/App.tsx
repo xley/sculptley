@@ -1,7 +1,8 @@
-import { MouseEventHandler, useRef } from "react";
+import { useRef } from "react";
 import "./App.css";
 import About from "./pages/About/About";
 import Art from "./pages/Art/Art";
+import Connect from "./pages/Connect/Connect";
 import Home from "./pages/Home/Home";
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
       <Home scrollTo={scrollToRef} />
       <About scrollTo={scrollToRef} />
       <Art connectRef={connectDiv} />
-      {/*Once connect section is added, this will be moved to there*/}
+      <Connect />
     </div>
   );
 }

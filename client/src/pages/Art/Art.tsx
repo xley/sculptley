@@ -1,8 +1,10 @@
 import {
+  ArrowIcon,
   ArtSection,
   SectionHeader,
   StyledBlurb,
   StyledButton,
+  StyledButtonText,
   StyledCompany,
   StyledDetail,
   StyledDetailDiv,
@@ -30,8 +32,9 @@ function Art({ connectRef }: Props) {
           detailing the art and the story behind the piece. Blurb detailing the
           art and the story..
         </StyledBlurb>
-        <StyledButton>VIEW ART</StyledButton>{" "}
-        {/* Missing > icon, I figure &gt; isn't what is desired*/}
+        <StyledButton>
+          <StyledButtonText>VIEW ART</StyledButtonText> <ArrowIcon />
+        </StyledButton>
       </ArtSection>
     </Wrapper>
   );
