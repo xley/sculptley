@@ -2,7 +2,7 @@ import styled from "styled-components";
 import img from "../../assets/images/atlantis-sculptors.jpg";
 
 export const Wrapper = styled.div`
-  margin: 40px;
+  margin: 2rem;
 `;
 
 export const StyledTitle = styled.div<{ firstName: string; lastName: string }>`
