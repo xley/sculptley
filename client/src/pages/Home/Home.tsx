@@ -8,7 +8,13 @@ import {
   Wrapper,
 } from "./Home.styles";
 import { ArrowRightS } from "@styled-icons/remix-line/ArrowRightS";
-function Home() {
+import { MouseEventHandler } from "react";
+
+interface Props {
+  scrollTo: MouseEventHandler;
+}
+
+function Home({ scrollTo }: Props) {
   return (
     <Wrapper>
       <StyledImage>
@@ -17,7 +23,7 @@ function Home() {
           <StyledLastName>CROSSLEY</StyledLastName>
         </StyledTitle>
         <StyledSlogan>ARTIST | SCULPTOR | CREATOR</StyledSlogan>
-        <StyledButton>CONNECT</StyledButton>
+        <StyledButton onClick={scrollTo}>CONNECT</StyledButton>
       </StyledImage>
     </Wrapper>
   );

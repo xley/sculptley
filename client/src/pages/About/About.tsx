@@ -1,3 +1,4 @@
+import { MouseEventHandler } from "react";
 import {
   Wrapper,
   SectionHeader,
@@ -6,7 +7,12 @@ import {
   StyledButton,
   StyledTitle,
 } from "./About.styles";
-function About() {
+
+interface Props {
+  scrollTo: MouseEventHandler;
+}
+
+function About({ scrollTo }: Props) {
   return (
     <Wrapper>
       <SectionHeader>ABOUT</SectionHeader>
@@ -20,7 +26,7 @@ function About() {
           to capture the scenic vision whilst empowering the art with realistic
           intent.
         </StyledBlurb>
-        <StyledButton>Connect</StyledButton>
+        <StyledButton onClick={scrollTo}>Connect</StyledButton>
       </AboutSection>
     </Wrapper>
   );
