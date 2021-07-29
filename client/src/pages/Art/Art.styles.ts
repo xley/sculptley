@@ -18,6 +18,7 @@ export const SectionHeader = styled.h1`
 export const ArtSection = styled.div`
   border: 1px solid black;
   padding: 1rem;
+  width: 100%; // For some reason this is required in my ArtSection but not in your AboutSection. Otherwise there is a gap on the right, couldn't find difference in code.
 `;
 
 export const StyledTitle = styled.h1`
@@ -26,7 +27,7 @@ export const StyledTitle = styled.h1`
   font-style: normal;
   font-weight: normal;
   text-align: center;
-  margin-bottom: 5px; // Not sure if this is good practice
+  margin-bottom: 0.5rem;
 `;
 
 export const StyledCompany = styled.h2`
@@ -35,12 +36,12 @@ export const StyledCompany = styled.h2`
   font-style: normal;
   font-weight: normal;
   text-align: center;
-  margin-top: 0px; // Good practice?
-  margin-bottom: 10px; // As above
+  margin: 0 auto 0.75rem auto;
 `;
 
 export const StyledDetailDiv = styled.div`
   justify-content: center;
+  /* width: 100%; */
 `;
 
 export const StyledDetail = styled.h3`
@@ -50,10 +51,8 @@ export const StyledDetail = styled.h3`
   font-weight: normal;
   display: inline-block;
   text-align: center;
-  margin-top: 0px; // Not sure if manipulating margin is correct practice
-  margin-bottom: 10px; // As above
-  width: 190px; // Copied width from Figma (not sure if you wanted exact)
-  height: 40px; // As above
+  margin: 0 auto 0.75rem auto;
+  width: 15%;
 `;
 
 export const StyledBlurb = styled.p`
@@ -74,4 +73,5 @@ export const StyledButton = styled.button`
   border: none;
   border-bottom: 1px solid black;
   cursor: pointer;
+  background-color: transparent;
 `;
