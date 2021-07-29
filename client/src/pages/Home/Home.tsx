@@ -1,29 +1,23 @@
-import {
-  StyledButton,
-  StyledFirstName,
-  StyledImage,
-  StyledLastName,
-  StyledSlogan,
-  StyledTitle,
-  Wrapper,
-} from "./Home.styles";
+import { useRef } from "react";
+import About from "../../sections/About/About";
+import Art from "../../sections/Art/Art";
+import Connect from "../../sections/Connect/Connect";
+import Landing from "../../sections/Landing/Landing";
 
-interface Props {
-  scrollTo: Function;
-}
+function Home() {
+  const scrollToRef = () =>
+    connectDiv.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  const connectDiv = useRef<null | HTMLDivElement>(null);
 
-function Home({ scrollTo }: Props) {
   return (
-    <Wrapper>
-      <StyledImage>
-        <StyledTitle firstName={"BRIAN"} lastName={"CROSSLEY"}>
-          <StyledFirstName>BRIAN</StyledFirstName>
-          <StyledLastName>CROSSLEY</StyledLastName>
-        </StyledTitle>
-        <StyledSlogan>ARTIST | SCULPTOR | CREATOR</StyledSlogan>
-        <StyledButton onClick={() => scrollTo()}>CONNECT</StyledButton>
-      </StyledImage>
-    </Wrapper>
+    <div className="App">
+      <Landing scrollTo={scrollToRef} />
+      <About scrollTo={scrollToRef} />
+      <Art />
+      <Connect connectRef={connectDiv} />
+    </div>
   );
 }
 
