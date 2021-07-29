@@ -37,7 +37,7 @@ export const FacebookIcon = styled(Facebook)`
 `;
 
 export const Wrapper = styled.div`
-  margin: 40px;
+  margin: 2rem;
   display: flex;
   flex-direction: row;
 `;
