@@ -12,18 +12,14 @@ import {
   Wrapper,
 } from "./Art.styles";
 
-interface Props {
-  connectRef: any;
-}
-
-function Art({ connectRef }: Props) {
+function Art() {
   return (
     <Wrapper>
       <SectionHeader>ART</SectionHeader>
       <ArtSection>
         <StyledTitle>TITLE</StyledTitle>
         <StyledCompany>COMPANY</StyledCompany>
-        <StyledDetailDiv ref={connectRef}>
+        <StyledDetailDiv>
           <StyledDetail>DATE</StyledDetail>
           <StyledDetail>LOCATION</StyledDetail>
         </StyledDetailDiv>

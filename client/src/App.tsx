@@ -7,16 +7,17 @@ import Home from "./pages/Home/Home";
 
 function App() {
   const scrollToRef = () =>
-    connectDiv.current?.scrollIntoView({ behavior: "smooth" });
-  // Very fixed way of doing it, wasn't sure how to make it dynamic
+    connectDiv.current?.scrollIntoView({
+      behavior: "smooth",
+    });
   const connectDiv = useRef<null | HTMLDivElement>(null);
 
   return (
     <div className="App">
       <Home scrollTo={scrollToRef} />
       <About scrollTo={scrollToRef} />
-      <Art connectRef={connectDiv} />
-      <Connect />
+      <Art />
+      <Connect connectRef={connectDiv} />
     </div>
   );
 }

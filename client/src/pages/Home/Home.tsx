@@ -7,10 +7,9 @@ import {
   StyledTitle,
   Wrapper,
 } from "./Home.styles";
-import { MouseEventHandler } from "react";
 
 interface Props {
-  scrollTo: MouseEventHandler;
+  scrollTo: Function;
 }
 
 function Home({ scrollTo }: Props) {
@@ -22,7 +21,7 @@ function Home({ scrollTo }: Props) {
           <StyledLastName>CROSSLEY</StyledLastName>
         </StyledTitle>
         <StyledSlogan>ARTIST | SCULPTOR | CREATOR</StyledSlogan>
-        <StyledButton onClick={scrollTo}>CONNECT</StyledButton>
+        <StyledButton onClick={() => scrollTo()}>CONNECT</StyledButton>
       </StyledImage>
     </Wrapper>
   );

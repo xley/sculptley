@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import {
   Wrapper,
   SectionHeader,
@@ -12,8 +11,12 @@ import {
   ConnectForm,
   StyledFormInput,
 } from "./Connect.styles";
-function Connect() {
-  const connectRef = useRef(null);
+
+interface Props {
+  connectRef: any;
+}
+
+function Connect({ connectRef }: Props) {
   return (
     <Wrapper ref={connectRef}>
       <SectionHeader>CONNECT</SectionHeader>
