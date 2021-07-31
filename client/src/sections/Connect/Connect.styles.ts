@@ -5,6 +5,7 @@ import { Email } from "@styled-icons/entypo/Email";
 import { MessageDetail } from "@styled-icons/boxicons-regular/MessageDetail";
 import { Linkedin } from "@styled-icons/bootstrap/Linkedin";
 import { Facebook } from "@styled-icons/entypo-social/Facebook";
+import { ChatMail } from "@styled-icons/fluentui-system-regular/ChatMail";
 
 export const PersonIcon = styled(PersonFill)`
   color: black;
@@ -27,13 +28,20 @@ export const MessageIcon = styled(MessageDetail)`
 `;
 
 export const LinkedinIcon = styled(Linkedin)`
-  color: black;
+  color: #0077b7;
   height: 5vh;
+  margin: 1rem;
 `;
 
 export const FacebookIcon = styled(Facebook)`
-  color: black;
+  color: #3c5a99;
   height: 5vh;
+  margin: 1rem;
+`;
+
+export const ChatMailIcon = styled(ChatMail)`
+  color: black;
+  height: 24vh;
 `;
 
 export const Wrapper = styled.div`
@@ -55,16 +63,21 @@ export const ConnectSection = styled.div`
   border: 1px solid black;
   padding: 1rem;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 `;
 
 export const ConnectForm = styled.div`
-  width: 100%;
+  width: 60%;
 `;
 
 export const StyledFormInput = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 `;
 
 export const StyledInput = styled.input`
@@ -73,6 +86,7 @@ export const StyledInput = styled.input`
   margin: 1rem;
   border: 1px solid black;
   border-radius: 1rem;
+  width: inherit;
   ::placeholder {
     color: black;
   }
@@ -83,8 +97,38 @@ export const StyledTextArea = styled.textarea`
   padding: 1rem;
   margin: 1rem;
   border: 1px solid black;
+  width: inherit;
   border-radius: 1rem;
   ::placeholder {
     color: black;
   }
+`;
+
+export const ConnectLinks = styled.div`
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const StyledEmailLink = styled.a`
+  margin: 2rem;
+`;
+
+export const StyledConnectLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  cursor: auto;
+  text-decoration: none;
+
+  :visited {
+    color: inherit;
+  }
+`;
+
+export const StyledLinkText = styled.p`
+  font-size: 1.2rem;
+  margin: 1rem;
+  font-family: "sans-serif";
 `;
