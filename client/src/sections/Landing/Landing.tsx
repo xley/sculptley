@@ -24,7 +24,7 @@ function Landing({ scrollTo }: Props) {
         </StyledTitle>
         <StyledSlogan>ARTIST | SCULPTOR | CREATOR</StyledSlogan>
         <StyledButtonDiv>
-          <StyledButton onClick={() => scrollTo()}>Connect</StyledButton>
+          <StyledButton onClick={() => scrollTo()}>CONNECT</StyledButton>
           <ArrowIcon />
         </StyledButtonDiv>
       </StyledImage>

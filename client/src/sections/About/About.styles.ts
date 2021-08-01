@@ -52,6 +52,9 @@ export const StyledButton = styled.button`
   border: none;
   cursor: pointer;
   background-color: transparent;
+  &:hover {
+    opacity: 30%;
+  }
 `;
 
 export const StyledButtonText = styled.p`
