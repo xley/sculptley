@@ -5,6 +5,8 @@ import {
   StyledBlurb,
   StyledButton,
   StyledTitle,
+  StyledButtonText,
+  ArrowIcon,
 } from "./About.styles";
 
 interface Props {
@@ -25,7 +27,12 @@ function About({ scrollTo }: Props) {
           to capture the scenic vision whilst empowering the art with realistic
           intent.
         </StyledBlurb>
-        <StyledButton onClick={() => scrollTo()}>Connect</StyledButton>
+        <StyledButton>
+          <StyledButtonText onClick={() => scrollTo()}>
+            Connect
+          </StyledButtonText>
+          <ArrowIcon />
+        </StyledButton>
       </AboutSection>
     </Wrapper>
   );

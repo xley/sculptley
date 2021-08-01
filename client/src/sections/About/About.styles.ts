@@ -1,4 +1,11 @@
 import styled from "styled-components";
+import { ArrowRightS } from "@styled-icons/remix-line/ArrowRightS";
+
+export const ArrowIcon = styled(ArrowRightS)`
+  color: black;
+  height: 4vh;
+  border-bottom: 0;
+`;
 
 export const Wrapper = styled.div`
   margin: 2rem;
@@ -38,6 +45,16 @@ export const StyledBlurb = styled.p`
 `;
 
 export const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
   float: right;
   margin: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+`;
+
+export const StyledButtonText = styled.p`
+  border-bottom: 1px solid black;
+  font-size: 1.5rem;
 `;
