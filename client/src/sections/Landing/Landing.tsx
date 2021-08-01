@@ -1,5 +1,7 @@
 import {
+  ArrowIcon,
   StyledButton,
+  StyledButtonDiv,
   StyledFirstName,
   StyledImage,
   StyledLastName,
@@ -21,7 +23,10 @@ function Landing({ scrollTo }: Props) {
           <StyledLastName>CROSSLEY</StyledLastName>
         </StyledTitle>
         <StyledSlogan>ARTIST | SCULPTOR | CREATOR</StyledSlogan>
-        <StyledButton onClick={() => scrollTo()}>CONNECT</StyledButton>
+        <StyledButtonDiv>
+          <StyledButton onClick={() => scrollTo()}>Connect</StyledButton>
+          <ArrowIcon />
+        </StyledButtonDiv>
       </StyledImage>
     </Wrapper>
   );

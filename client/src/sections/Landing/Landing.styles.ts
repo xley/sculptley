@@ -1,5 +1,13 @@
 import styled from "styled-components";
 import img from "../../assets/images/atlantis-sculptors.jpg";
+import { ArrowRightS } from "@styled-icons/remix-line/ArrowRightS";
+
+export const ArrowIcon = styled(ArrowRightS)`
+  color: white;
+  height: 4vh;
+  border-bottom: 0;
+  align-self: center;
+`;
 
 export const Wrapper = styled.div`
   margin: 2rem;
@@ -40,30 +48,9 @@ export const StyledSlogan = styled.h2`
   text-align: left;
 `;
 
-export const StyledButton = styled.button`
-  font-family: sans-serif;
-  text-align: left;
-
-  cursor: pointer;
-  color: #432df3;
-  text-decoration: underline;
-  font-size: 1rem;
-  outline: none;
-  padding: 0 8px;
-  border: 1px solid transparent;
-  transition: 0.1s ease-in;
-  float: right;
-
-  &:hover {
-    color: #2512b3;
-    transition: 0.15s ease-out;
-  }
-
-  &:focus {
-    background-color: #efedff;
-    border: 1px solid #cec8fa;
-    transition: 0.15s ease-out;
-  }
+export const StyledButtonText = styled.p`
+  border-bottom: 1px solid black;
+  font-size: 1.5rem; ;
 `;
 
 export const StyledImage = styled.div`
@@ -74,4 +61,19 @@ export const StyledImage = styled.div`
   background-size: auto;
   background-repeat: no-repeat;
   min-width: 500px;
+`;
+
+export const StyledButton = styled.button`
+  color: white;
+  border: 0;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  align-items: center;
+  cursor: pointer;
+`;
+
+export const StyledButtonDiv = styled.div`
+  display: flex;
+  justify-content: flex-end;
 `;
