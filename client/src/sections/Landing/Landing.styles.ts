@@ -76,4 +76,7 @@ export const StyledButton = styled.button`
 export const StyledButtonDiv = styled.div`
   display: flex;
   justify-content: flex-end;
+  &:hover {
+    opacity: 30%;
+  }
 `;

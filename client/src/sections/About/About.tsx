@@ -29,7 +29,7 @@ function About({ scrollTo }: Props) {
         </StyledBlurb>
         <StyledButton>
           <StyledButtonText onClick={() => scrollTo()}>
-            Connect
+            CONNECT
           </StyledButtonText>
           <ArrowIcon />
         </StyledButton>
