@@ -91,8 +91,8 @@ function Connect({ connectRef }: Props) {
             <StyledInput
               type="text"
               placeholder="Phone"
-              id="contact_number"
-              name="contact_number"
+              id="contact_phone"
+              name="contact_phone"
             />
           </StyledFormInput>
           <StyledFormInput>
