@@ -69,7 +69,7 @@ export const ConnectSection = styled.div`
   flex-wrap: wrap;
 `;
 
-export const ConnectForm = styled.div`
+export const ConnectForm = styled.form`
   width: 60%;
 `;
 
