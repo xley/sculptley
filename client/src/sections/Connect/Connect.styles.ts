@@ -6,6 +6,13 @@ import { MessageDetail } from "@styled-icons/boxicons-regular/MessageDetail";
 import { Linkedin } from "@styled-icons/bootstrap/Linkedin";
 import { Facebook } from "@styled-icons/entypo-social/Facebook";
 import { ChatMail } from "@styled-icons/fluentui-system-regular/ChatMail";
+import { ArrowRightS } from "@styled-icons/remix-line/ArrowRightS";
+
+export const ArrowIcon = styled(ArrowRightS)`
+  color: black;
+  height: 4vh;
+  border-bottom: 0;
+`;
 
 export const PersonIcon = styled(PersonFill)`
   color: black;
@@ -131,4 +138,22 @@ export const StyledLinkText = styled.p`
   font-size: 1.2rem;
   margin: 1rem;
   font-family: "sans-serif";
+`;
+
+export const StyledSubmitButton = styled.div`
+  display: flex;
+  align-items: center;
+  float: right;
+  margin: 1rem;
+  &:hover {
+    opacity: 30%;
+  }
+`;
+
+export const StyledSubmitInput = styled.input`
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+  font-size: 1.5rem;
 `;

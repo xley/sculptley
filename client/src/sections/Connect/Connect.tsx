@@ -1,38 +1,56 @@
-import {
-  Wrapper,
-  SectionHeader,
-  ConnectSection,
-  StyledInput,
-  PersonIcon,
-  StyledTextArea,
-  PhoneIcon,
-  EmailIcon,
-  MessageIcon,
-  ConnectForm,
-  StyledFormInput,
-  ConnectLinks,
-  StyledEmailLink,
-  ChatMailIcon,
-  LinkedinIcon,
-  FacebookIcon,
-  StyledLinkText,
-  StyledConnectLink,
-} from "./Connect.styles";
+import * as Styles from "./Connect.styles";
 import emailjs from "emailjs-com";
+import { useState } from "react";
 
 interface Props {
   connectRef: any;
 }
 
+interface Form {
+  contactName: string;
+  contactEmail: string;
+  contactPhone: string;
+  message: string;
+}
+
 function Connect({ connectRef }: Props) {
+  const [form, setForm] = useState<Form>({
+    contactName: "",
+    contactEmail: "",
+    contactPhone: "",
+    message: "",
+  });
+  const [sentForm, setSentForm] = useState<Form>();
+  const [isSent, setIsSent] = useState(false);
+
+  const oneFieldRequired = (fieldValue: string): boolean => {
+    if (!fieldValue) return true;
+    return false;
+  };
+
+  const handleFormChange = (e: { target: { name: any; value: any } }) => {
+    const { name, value } = e.target;
+    setForm((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+    setIsSent(false);
+  };
+
   const handleConnectSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
+    setIsSent(true);
     if (
       !process.env.REACT_APP_EMAILJS_SERVICE_ID ||
       !process.env.REACT_APP_EMAILJS_TEMPLATE_ID ||
       !process.env.REACT_APP_EMAILJS_USER_ID
     )
       return; // TODO: Throw an error stating email can not be sent
+    if (sentForm === form) {
+      setIsSent(true);
+      return;
+    } // TODO: Throw warning stating message was already sent
+
     emailjs
       .sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -44,79 +62,106 @@ function Connect({ connectRef }: Props) {
         (result) => {
           // TODO: Confirm Email has been sent
           console.log(result.text);
+          setSentForm(form);
+          setIsSent(true);
         },
         (error) => {
           // TODO: Throw error message stating email could not be sent.
           // Redirect to linkedin or facebook
           console.log(error.text);
+          setIsSent(false);
         }
       );
   };
 
   return (
-    <Wrapper ref={connectRef}>
-      <SectionHeader>CONNECT</SectionHeader>
-      <ConnectSection>
-        <ConnectLinks>
-          <StyledEmailLink>
-            <ChatMailIcon />
-          </StyledEmailLink>
-          <StyledConnectLink
+    <Styles.Wrapper ref={connectRef}>
+      <Styles.SectionHeader>CONNECT</Styles.SectionHeader>
+      <Styles.ConnectSection>
+        <Styles.ConnectLinks>
+          <Styles.StyledEmailLink>
+            <Styles.ChatMailIcon />
+          </Styles.StyledEmailLink>
+          <Styles.StyledConnectLink
             href="https://www.linkedin.com/in/brian-crossley-67aa3a61/"
             target="_blank"
           >
-            <LinkedinIcon />
-            <StyledLinkText>briancrossley.linkedin</StyledLinkText>
-          </StyledConnectLink>
-          <StyledConnectLink
+            <Styles.LinkedinIcon />
+            <Styles.StyledLinkText>
+              briancrossley.linkedin
+            </Styles.StyledLinkText>
+          </Styles.StyledConnectLink>
+          <Styles.StyledConnectLink
             href="https://www.facebook.com/Scuptley-103219672040870"
             target="_blank"
           >
-            <FacebookIcon />
-            <StyledLinkText>briancrossley.facebook</StyledLinkText>
-          </StyledConnectLink>
-        </ConnectLinks>
-        <ConnectForm onSubmit={handleConnectSubmit}>
-          <StyledFormInput>
-            <PersonIcon />
-            <StyledInput
+            <Styles.FacebookIcon />
+            <Styles.StyledLinkText>
+              briancrossley.facebook
+            </Styles.StyledLinkText>
+          </Styles.StyledConnectLink>
+        </Styles.ConnectLinks>
+        <Styles.ConnectForm onSubmit={handleConnectSubmit}>
+          <Styles.StyledFormInput>
+            <Styles.PersonIcon />
+            <Styles.StyledInput
               type="text"
               placeholder="Name"
-              id="contact_name"
-              name="contact_name"
+              id="contactName"
+              name="contactName"
+              value={form.contactName}
+              onChange={handleFormChange}
+              required
             />
-          </StyledFormInput>
-          <StyledFormInput>
-            <PhoneIcon />
-            <StyledInput
-              type="text"
-              placeholder="Phone"
-              id="contact_phone"
-              name="contact_phone"
+          </Styles.StyledFormInput>
+          <Styles.StyledFormInput>
+            <Styles.PhoneIcon />
+            <Styles.StyledInput
+              type="tel"
+              placeholder="Phone Number"
+              id="contactPhone"
+              name="contactPhone"
+              pattern="[0-9]{10}"
+              value={form.contactPhone}
+              onChange={handleFormChange}
+              required={oneFieldRequired(form.contactEmail)}
             />
-          </StyledFormInput>
-          <StyledFormInput>
-            <EmailIcon />
-            <StyledInput
-              type="text"
+          </Styles.StyledFormInput>
+          <Styles.StyledFormInput>
+            <Styles.EmailIcon />
+            <Styles.StyledInput
+              type="email"
               placeholder="Email"
-              id="contact_email"
-              name="contact_email"
+              id="contactEmail"
+              name="contactEmail"
+              value={form.contactEmail}
+              onChange={handleFormChange}
+              required={oneFieldRequired(form.contactPhone)}
             />
-          </StyledFormInput>
-          <StyledFormInput>
-            <MessageIcon />
-            <StyledTextArea
+          </Styles.StyledFormInput>
+          <Styles.StyledFormInput>
+            <Styles.MessageIcon />
+            <Styles.StyledTextArea
               placeholder="Message.."
               rows={4}
               id="message"
               name="message"
+              value={form.message}
+              onChange={handleFormChange}
+              required
             />
-          </StyledFormInput>
-          <input type="submit" value="Send" />
-        </ConnectForm>
-      </ConnectSection>
-    </Wrapper>
+          </Styles.StyledFormInput>
+          <Styles.StyledSubmitButton>
+            <Styles.StyledSubmitInput
+              type="submit"
+              value="SEND"
+              disabled={isSent}
+            />
+            <Styles.ArrowIcon />
+          </Styles.StyledSubmitButton>
+        </Styles.ConnectForm>
+      </Styles.ConnectSection>
+    </Styles.Wrapper>
   );
 }
 
