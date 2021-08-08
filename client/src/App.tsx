@@ -6,9 +6,9 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import TestArtPiece from "./pages/ArtPieces/TestArtPiece/TestArtPiece";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ArtPiece from "./pages/ArtPieces/ArtPiece/ArtPiece";
 
 toast.configure();
 function App() {
@@ -19,7 +19,7 @@ function App() {
           <Home />
         </Route>
         <Route path="/Art">
-          <TestArtPiece />
+          <ArtPiece />
         </Route>
         <Route path="/">
           <Redirect to="/Home" />

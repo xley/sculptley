@@ -19,6 +19,7 @@ function Art() {
   function handleViewArt() {
     history.push("/art");
   }
+
   return (
     <Wrapper>
       <SectionHeader>ART</SectionHeader>
