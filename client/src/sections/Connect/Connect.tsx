@@ -1,6 +1,7 @@
 import * as Styles from "./Connect.styles";
 import emailjs from "emailjs-com";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 interface Props {
   connectRef: any;
@@ -44,12 +45,30 @@ function Connect({ connectRef }: Props) {
       !process.env.REACT_APP_EMAILJS_SERVICE_ID ||
       !process.env.REACT_APP_EMAILJS_TEMPLATE_ID ||
       !process.env.REACT_APP_EMAILJS_USER_ID
-    )
-      return; // TODO: Throw an error stating email can not be sent
-    if (sentForm === form) {
-      setIsSent(true);
+    ) {
+      toast.error(
+        "Message can not be sent at the moment. please use LinkedIn or Facebook to connect",
+        {
+          position: toast.POSITION.TOP_CENTER,
+        }
+      );
       return;
-    } // TODO: Throw warning stating message was already sent
+    }
+    if (
+      sentForm?.contactEmail === form?.contactEmail ||
+      sentForm?.contactPhone === form?.contactPhone
+    ) {
+      setIsSent(true);
+      toast.warning(
+        `Message has already been sent for ${form.contactName} (${
+          form?.contactPhone ?? form?.contactEmail
+        })`,
+        {
+          position: toast.POSITION.TOP_CENTER,
+        }
+      );
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -60,14 +79,25 @@ function Connect({ connectRef }: Props) {
       )
       .then(
         (result) => {
-          // TODO: Confirm Email has been sent
+          toast.success(
+            `Message has successfully been sent for ${form.contactName} (${
+              form?.contactPhone ?? form?.contactEmail
+            })`,
+            {
+              position: toast.POSITION.TOP_CENTER,
+            }
+          );
           console.log(result.text);
           setSentForm(form);
           setIsSent(true);
         },
         (error) => {
-          // TODO: Throw error message stating email could not be sent.
-          // Redirect to linkedin or facebook
+          toast.error(
+            "Message can not be sent at the moment, please use LinkedIn or Facebook to connect",
+            {
+              position: toast.POSITION.TOP_CENTER,
+            }
+          );
           console.log(error.text);
           setIsSent(false);
         }

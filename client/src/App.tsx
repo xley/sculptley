@@ -7,7 +7,10 @@ import {
   Redirect,
 } from "react-router-dom";
 import TestArtPiece from "./pages/ArtPieces/TestArtPiece/TestArtPiece";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
+toast.configure();
 function App() {
   return (
     <Router>
