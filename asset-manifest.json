@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sculptley/static/css/main.a617e044.chunk.css",
-    "main.js": "/sculptley/static/js/main.bca8e3d7.chunk.js",
-    "main.js.map": "/sculptley/static/js/main.bca8e3d7.chunk.js.map",
+    "main.js": "/sculptley/static/js/main.e8923a21.chunk.js",
+    "main.js.map": "/sculptley/static/js/main.e8923a21.chunk.js.map",
     "runtime-main.js": "/sculptley/static/js/runtime-main.cacf41cc.js",
     "runtime-main.js.map": "/sculptley/static/js/runtime-main.cacf41cc.js.map",
     "static/css/2.68b64559.chunk.css": "/sculptley/static/css/2.68b64559.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.68b64559.chunk.css",
     "static/js/2.961646ec.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.bca8e3d7.chunk.js"
+    "static/js/main.e8923a21.chunk.js"
   ]
 }
