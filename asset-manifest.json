@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/sculptley/static/css/main.a617e044.chunk.css",
+    "main.js": "/sculptley/static/js/main.b5b67637.chunk.js",
+    "main.js.map": "/sculptley/static/js/main.b5b67637.chunk.js.map",
+    "runtime-main.js": "/sculptley/static/js/runtime-main.cacf41cc.js",
+    "runtime-main.js.map": "/sculptley/static/js/runtime-main.cacf41cc.js.map",
+    "static/css/2.68b64559.chunk.css": "/sculptley/static/css/2.68b64559.chunk.css",
+    "static/js/2.961646ec.chunk.js": "/sculptley/static/js/2.961646ec.chunk.js",
+    "static/js/2.961646ec.chunk.js.map": "/sculptley/static/js/2.961646ec.chunk.js.map",
+    "static/js/3.086434b0.chunk.js": "/sculptley/static/js/3.086434b0.chunk.js",
+    "static/js/3.086434b0.chunk.js.map": "/sculptley/static/js/3.086434b0.chunk.js.map",
+    "index.html": "/sculptley/index.html",
+    "static/css/2.68b64559.chunk.css.map": "/sculptley/static/css/2.68b64559.chunk.css.map",
+    "static/css/main.a617e044.chunk.css.map": "/sculptley/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.961646ec.chunk.js.LICENSE.txt": "/sculptley/static/js/2.961646ec.chunk.js.LICENSE.txt",
+    "static/media/atlantis-sculptors.284ac7d6.jpg": "/sculptley/static/media/atlantis-sculptors.284ac7d6.jpg",
+    "static/media/lostcity-sphinx.ca9cef9a.jpeg": "/sculptley/static/media/lostcity-sphinx.ca9cef9a.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cacf41cc.js",
+    "static/css/2.68b64559.chunk.css",
+    "static/js/2.961646ec.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.b5b67637.chunk.js"
+  ]
+}
