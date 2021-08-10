@@ -1,7 +1,7 @@
 import "./App.css";
 import Home from "./pages/Home/Home";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -13,16 +13,16 @@ import ArtPiece from "./pages/ArtPieces/ArtPiece/ArtPiece";
 toast.configure();
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <Switch>
-        <Route path="/Home">
+        <Route path="/home">
           <Home />
         </Route>
-        <Route path="/Art">
+        <Route path="/art">
           <ArtPiece />
         </Route>
         <Route path="/">
-          <Redirect to="/Home" />
+          <Redirect to="/home" />
         </Route>
       </Switch>
     </Router>
