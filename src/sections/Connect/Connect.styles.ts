@@ -157,3 +157,8 @@ export const StyledSubmitInput = styled.input`
   border-bottom: 1px solid black;
   font-size: 1.5rem;
 `;
+
+export const StyleRecaptchaContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;

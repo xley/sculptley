@@ -2,6 +2,7 @@ import * as Styles from "./Connect.styles";
 import emailjs from "emailjs-com";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface Props {
   connectRef: any;
@@ -22,7 +23,8 @@ function Connect({ connectRef }: Props) {
     message: "",
   });
   const [sentForm, setSentForm] = useState<Form>();
-  const [isSent, setIsSent] = useState(false);
+  const [formDisabled, setFormDisabled] = useState(false);
+  const [recaptchaSuccess, setRecaptchaSuccess] = useState(false);
 
   const oneFieldRequired = (fieldValue: string): boolean => {
     if (!fieldValue) return true;
@@ -35,12 +37,35 @@ function Connect({ connectRef }: Props) {
       ...prevState,
       [name]: value,
     }));
-    setIsSent(false);
+    if (
+      oneFieldRequired(form.contactEmail) ||
+      oneFieldRequired(form.contactPhone)
+    )
+      setFormDisabled(false);
+  };
+
+  const onRecaptchaChange = () => {
+    setRecaptchaSuccess(true);
+  };
+
+  const onRecaptchaError = () => {
+    toast.error(
+      "Message can not be sent at the moment. please use LinkedIn or Facebook to connect",
+      {
+        position: toast.POSITION.TOP_CENTER,
+      }
+    );
   };
 
   const handleConnectSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    setIsSent(true);
+    if (!recaptchaSuccess) {
+      toast.warning("Message can not be sent until user is verified", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+      return;
+    }
+    setFormDisabled(true);
     if (
       !process.env.REACT_APP_EMAILJS_SERVICE_ID ||
       !process.env.REACT_APP_EMAILJS_TEMPLATE_ID ||
@@ -58,7 +83,7 @@ function Connect({ connectRef }: Props) {
       sentForm?.contactEmail === form?.contactEmail ||
       sentForm?.contactPhone === form?.contactPhone
     ) {
-      setIsSent(true);
+      setFormDisabled(true);
       toast.warning(
         `Message has already been sent for ${form.contactName} (${
           form?.contactPhone ?? form?.contactEmail
@@ -89,7 +114,7 @@ function Connect({ connectRef }: Props) {
           );
           console.log(result.text);
           setSentForm(form);
-          setIsSent(true);
+          setFormDisabled(true);
         },
         (error) => {
           toast.error(
@@ -99,7 +124,7 @@ function Connect({ connectRef }: Props) {
             }
           );
           console.log(error.text);
-          setIsSent(false);
+          setFormDisabled(false);
         }
       );
   };
@@ -181,11 +206,20 @@ function Connect({ connectRef }: Props) {
               required
             />
           </Styles.StyledFormInput>
+          {process.env.REACT_APP_EMAILJS_SERVICE_ID && (
+            <Styles.StyleRecaptchaContainer>
+              <ReCAPTCHA
+                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY || ""}
+                onChange={onRecaptchaChange}
+                onErrored={onRecaptchaError}
+              />
+            </Styles.StyleRecaptchaContainer>
+          )}
           <Styles.StyledSubmitButton>
             <Styles.StyledSubmitInput
               type="submit"
               value="SEND"
-              disabled={isSent}
+              disabled={formDisabled}
             />
             <Styles.ArrowIcon />
           </Styles.StyledSubmitButton>
