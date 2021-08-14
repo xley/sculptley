@@ -26,6 +26,12 @@ jobs:
       - run: yarn test
       - run: yarn predeploy
   deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
     steps:
       - name: Deploy with gh-pages
         run: |
