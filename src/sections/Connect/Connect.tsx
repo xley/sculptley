@@ -131,7 +131,9 @@ function Connect({ connectRef }: Props) {
 
   return (
     <Styles.Wrapper ref={connectRef}>
-      <Styles.SectionHeader>CONNECT</Styles.SectionHeader>
+      <Styles.SectionHeader data-testid="connect-section-header">
+        CONNECT
+      </Styles.SectionHeader>
       <Styles.ConnectSection>
         <Styles.ConnectLinks>
           <Styles.StyledEmailLink>

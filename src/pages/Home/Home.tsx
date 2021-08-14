@@ -12,12 +12,12 @@ function Home() {
   const connectDiv = useRef<null | HTMLDivElement>(null);
 
   return (
-    <div className="App">
+    <>
       <Landing scrollTo={scrollToRef} />
       <About scrollTo={scrollToRef} />
       <Art />
       <Connect connectRef={connectDiv} />
-    </div>
+    </>
   );
 }
 
