@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ArrowRightS } from "@styled-icons/remix-line/ArrowRightS";
+import { ArrowRightS } from "@styled-icons/remix-line";
 
 export const ArrowIcon = styled(ArrowRightS)`
   color: black;

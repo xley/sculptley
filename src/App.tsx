@@ -13,7 +13,7 @@ import ArtPiece from "./pages/ArtPieces/ArtPiece/ArtPiece";
 toast.configure();
 function App() {
   return (
-    <Router basename="/">
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path="/home">
           <Home />
