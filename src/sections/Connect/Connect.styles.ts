@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { PersonFill } from "@styled-icons/bootstrap/PersonFill";
-import { Phone } from "@styled-icons/boxicons-regular/Phone";
-import { Email } from "@styled-icons/entypo/Email";
-import { MessageDetail } from "@styled-icons/boxicons-regular/MessageDetail";
-import { Linkedin } from "@styled-icons/bootstrap/Linkedin";
-import { Facebook } from "@styled-icons/entypo-social/Facebook";
-import { ChatMail } from "@styled-icons/fluentui-system-regular/ChatMail";
-import { ArrowRightS } from "@styled-icons/remix-line/ArrowRightS";
+import { PersonFill } from "@styled-icons/bootstrap";
+import { Phone } from "@styled-icons/boxicons-regular";
+import { Email } from "@styled-icons/entypo";
+import { MessageDetail } from "@styled-icons/boxicons-regular";
+import { Linkedin } from "@styled-icons/bootstrap";
+import { Facebook } from "@styled-icons/entypo-social";
+import { ChatMail } from "@styled-icons/fluentui-system-regular";
+import { ArrowRightS } from "@styled-icons/remix-line";
 
 export const ArrowIcon = styled(ArrowRightS)`
   color: black;
