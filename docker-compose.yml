@@ -1,15 +1,15 @@
-version: '3'
+version: "3"
 services:
-    client: 
-        build: 
-            context: ./client
-            dockerfile: Dockerfile
-        environment:
-            - NODE_ENV=development
-        volumes:
-            - ./client:/app/client
-            - /app/client/node_modules  
-        ports:
-            - $CLIENT_LOCAL_PORT:$CLIENT_DOCKER_PORT
-        expose:
-            - $CLIENT_DOCKER_PORT
+  client:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - $CLIENT_LOCAL_PORT:$CLIENT_DOCKER_PORT
+    expose:
+      - $CLIENT_DOCKER_PORT

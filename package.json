@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "up:dev": "docker-compose up --build",
+    "up": "docker-compose up --build",
     "down": "docker-compose down",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

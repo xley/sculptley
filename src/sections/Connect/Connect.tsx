@@ -208,10 +208,10 @@ function Connect({ connectRef }: Props) {
               required
             />
           </Styles.StyledFormInput>
-          {process.env.REACT_APP_EMAILJS_SERVICE_ID && (
+          {process.env.REACT_APP_RECAPTCHA_SITE_KEY && (
             <Styles.StyleRecaptchaContainer>
               <ReCAPTCHA
-                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY || ""}
+                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
                 onChange={onRecaptchaChange}
                 onErrored={onRecaptchaError}
               />
