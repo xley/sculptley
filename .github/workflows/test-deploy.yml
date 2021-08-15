@@ -6,6 +6,12 @@ name: Deploy CI
 on:
   push:
     branches: [main]
+    
+env:
+  REACT_APP_EMAILJS_SERVICE_ID: ${{ secrets.REACT_APP_EMAILJS_SERVICE_ID }}
+  REACT_APP_EMAILJS_TEMPLATE_ID: ${{ secrets.REACT_APP_EMAILJS_TEMPLATE_ID }}
+  REACT_APP_EMAILJS_USER_ID: ${{ secrets.REACT_APP_EMAILJS_USER_ID }}
+  REACT_APP_RECAPTCHA_SECRET_KEY: ${{ secrets.REACT_APP_RECAPTCHA_SECRET_KEY }}
 
 jobs:
   build:
