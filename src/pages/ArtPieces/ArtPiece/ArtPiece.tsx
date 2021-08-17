@@ -10,6 +10,8 @@ import {
   Wrapper,
 } from "./ArtPiece.style";
 import { useHistory } from "react-router-dom";
+import { PhotoGallery } from "../../../components/Images/PhotoGallery";
+import { images } from "./Images";
 
 function ArtPiece() {
   let history = useHistory();
@@ -39,6 +41,7 @@ function ArtPiece() {
         the art and the story behind the piece. Blurb detailing the art and the
         story..
       </StyledBlurb>
+      <PhotoGallery images={images} />
     </Wrapper>
   );
 }
