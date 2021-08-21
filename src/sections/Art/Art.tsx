@@ -1,6 +1,7 @@
 import {
   ArrowIcon,
   ArtSection,
+  ArtSectionDetails,
   SectionHeader,
   StyledBlurb,
   StyledButton,
@@ -12,32 +13,37 @@ import {
   Wrapper,
 } from "./Art.styles";
 import { useHistory } from "react-router-dom";
+import useCheckMobileScreen from "../../hooks/mobile/useCheckMobileScreen";
 
 function Art() {
   let history = useHistory();
+  let mobile = useCheckMobileScreen();
 
   function handleViewArt() {
     history.push("/art");
   }
 
   return (
-    <Wrapper>
-      <SectionHeader>ART</SectionHeader>
+    <Wrapper mobile={mobile}>
+      <SectionHeader mobile={mobile}>ART</SectionHeader>
       <ArtSection>
-        <StyledTitle>TITLE</StyledTitle>
-        <StyledCompany>COMPANY</StyledCompany>
-        <StyledDetailDiv>
-          <StyledDetail>DATE</StyledDetail>
-          <StyledDetail>LOCATION</StyledDetail>
-        </StyledDetailDiv>
-        <StyledBlurb>
-          Blurb detailing the art and the story behind the piece. Blurb
-          detailing the art and the story behind the piece. Blurb detailing the
-          art and the story..
-        </StyledBlurb>
-        <StyledButton onClick={handleViewArt}>
-          <StyledButtonText>VIEW ART</StyledButtonText> <ArrowIcon />
-        </StyledButton>
+        <ArtSectionDetails>
+          <StyledTitle>LOST CITY</StyledTitle>
+          <StyledCompany></StyledCompany>
+          <StyledDetailDiv>
+            <StyledDetail>2007</StyledDetail>
+            <StyledDetail>GOLD COAST</StyledDetail>
+          </StyledDetailDiv>
+          <StyledBlurb>
+            Blurb detailing the art and the story behind the piece. Blurb
+            detailing the art and the story behind the piece. Blurb detailing
+            the art and the story. Blurb detailing the art and the story behind
+            the piece. Blurb detailing ....
+          </StyledBlurb>
+          <StyledButton onClick={handleViewArt}>
+            <StyledButtonText>VIEW ART</StyledButtonText> <ArrowIcon />
+          </StyledButton>
+        </ArtSectionDetails>
       </ArtSection>
     </Wrapper>
   );

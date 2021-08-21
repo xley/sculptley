@@ -60,7 +60,6 @@ export const StyledImage = styled.div`
   border: 1px solid black;
   background-size: auto;
   background-repeat: no-repeat;
-  min-width: 500px;
 `;
 
 export const StyledButton = styled.button`
