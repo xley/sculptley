@@ -1,32 +1,55 @@
 import styled from "styled-components";
 import { ArrowRightS } from "@styled-icons/remix-line";
+import img from "../../assets/images/lostcity-sphinx.jpeg";
 
 export const ArrowIcon = styled(ArrowRightS)`
-  color: black;
+  color: ${(props) => props.theme.palette.primary.main};
   height: 4vh;
   border-bottom: 0;
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ mobile: boolean }>`
   margin: 2rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => (props.mobile ? "column" : "row")};
 `;
 
-export const SectionHeader = styled.h1`
+export const SectionHeader = styled.h1<{ mobile: boolean }>`
   font-size: 5rem;
   font-family: sans-serif;
   text-align: center;
-  writing-mode: tb-rl;
-  transform: rotate(-180deg);
+  margin: 1rem;
+  ${(props) =>
+    !props.mobile &&
+    `
+    transform: rotate(-180deg);
+    writing-mode: tb-rl;
+  `};
+`;
+
+export const SectionMobileHeader = styled.h1`
+  font-size: 5rem;
+  font-family: sans-serif;
+  text-align: center;
   margin: 1rem;
 `;
 
 export const ArtSection = styled.div`
-  border: 1px solid black;
-  padding: 1rem;
+  border: 1px solid ${(props) => props.theme.palette.primary.contrastText};
   width: 100%;
   min-width: 300px;
+  max-height: 400rem;
+  background-image: url(${img});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+`;
+
+export const ArtSectionDetails = styled.div`
+  width: 100%;
+  padding: 1rem 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+  color: ${(props) => props.theme.palette.primary.main};
 `;
 
 export const StyledTitle = styled.h1`
@@ -49,6 +72,7 @@ export const StyledCompany = styled.h2`
 
 export const StyledDetailDiv = styled.div`
   justify-content: center;
+  display: flex;
 `;
 
 export const StyledDetail = styled.h3`
@@ -66,11 +90,10 @@ export const StyledBlurb = styled.p`
   font-size: 1.5rem;
   font-family: sans-serif;
   text-align: justify;
-  border-left: 1px solid black;
+  border-left: 1px solid ${(props) => props.theme.palette.primary.main};
   margin: auto;
   padding: 0 1rem;
   width: 40%;
-  min-width: 300px;
 `;
 
 export const StyledButton = styled.button`
@@ -87,6 +110,7 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledButtonText = styled.p`
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid ${(props) => props.theme.palette.primary.main};
   font-size: 1.5rem;
+  color: ${(props) => props.theme.palette.primary.main};
 `;

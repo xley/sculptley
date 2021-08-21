@@ -72,7 +72,7 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledButtonContainer = styled.div`
-  position: fixed;
+  position: absolute;
   top: 2.5rem;
   left: 2rem;
   &:hover {

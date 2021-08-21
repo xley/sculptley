@@ -1,3 +1,4 @@
+import useCheckMobileScreen from "../../hooks/mobile/useCheckMobileScreen";
 import {
   Wrapper,
   SectionHeader,
@@ -14,9 +15,10 @@ interface Props {
 }
 
 function About({ scrollTo }: Props) {
+  let mobile = useCheckMobileScreen();
   return (
-    <Wrapper>
-      <SectionHeader>ABOUT</SectionHeader>
+    <Wrapper mobile={mobile}>
+      <SectionHeader mobile={mobile}>ABOUT</SectionHeader>
       <AboutSection>
         <StyledTitle>briancrossley</StyledTitle>
         <StyledBlurb>

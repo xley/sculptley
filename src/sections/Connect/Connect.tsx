@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import ReCAPTCHA from "react-google-recaptcha";
+import useCheckMobileScreen from "../../hooks/mobile/useCheckMobileScreen";
 
 interface Props {
   connectRef: any;
@@ -16,6 +17,8 @@ interface Form {
 }
 
 function Connect({ connectRef }: Props) {
+  let mobile = useCheckMobileScreen();
+
   const [form, setForm] = useState<Form>({
     contactName: "",
     contactEmail: "",
@@ -37,11 +40,7 @@ function Connect({ connectRef }: Props) {
       ...prevState,
       [name]: value,
     }));
-    if (
-      oneFieldRequired(form.contactEmail) ||
-      oneFieldRequired(form.contactPhone)
-    )
-      setFormDisabled(false);
+    if (form.contactEmail && form.contactPhone) setFormDisabled(false);
   };
 
   const onRecaptchaChange = () => {
@@ -86,7 +85,7 @@ function Connect({ connectRef }: Props) {
       setFormDisabled(true);
       toast.warning(
         `Message has already been sent for ${form.contactName} (${
-          form?.contactPhone ?? form?.contactEmail
+          form?.contactEmail || form?.contactPhone
         })`,
         {
           position: toast.POSITION.TOP_CENTER,
@@ -106,7 +105,7 @@ function Connect({ connectRef }: Props) {
         (result) => {
           toast.success(
             `Message has successfully been sent for ${form.contactName} (${
-              form?.contactPhone ?? form?.contactEmail
+              form?.contactEmail || form?.contactPhone
             })`,
             {
               position: toast.POSITION.TOP_CENTER,
@@ -130,8 +129,11 @@ function Connect({ connectRef }: Props) {
   };
 
   return (
-    <Styles.Wrapper ref={connectRef}>
-      <Styles.SectionHeader data-testid="connect-section-header">
+    <Styles.Wrapper mobile={mobile} ref={connectRef}>
+      <Styles.SectionHeader
+        mobile={mobile}
+        data-testid="connect-section-header"
+      >
         CONNECT
       </Styles.SectionHeader>
       <Styles.ConnectSection>

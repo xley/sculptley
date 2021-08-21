@@ -51,19 +51,23 @@ export const ChatMailIcon = styled(ChatMail)`
   height: 24vh;
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ mobile: boolean }>`
   margin: 2rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => (props.mobile ? "column" : "row")};
 `;
 
-export const SectionHeader = styled.h1`
+export const SectionHeader = styled.h1<{ mobile: boolean }>`
   font-size: 5rem;
   font-family: sans-serif;
   text-align: center;
-  writing-mode: tb-rl;
-  transform: rotate(-180deg);
   margin: 1rem;
+  ${(props) =>
+    !props.mobile &&
+    `
+    transform: rotate(-180deg);
+    writing-mode: tb-rl;
+  `};
 `;
 
 export const ConnectSection = styled.div`
@@ -77,7 +81,7 @@ export const ConnectSection = styled.div`
 `;
 
 export const ConnectForm = styled.form`
-  width: 60%;
+  width: auto;
 `;
 
 export const StyledFormInput = styled.div`
@@ -128,7 +132,7 @@ export const StyledConnectLink = styled.a`
   color: inherit;
   cursor: auto;
   text-decoration: none;
-
+  cursor: pointer;
   :visited {
     color: inherit;
   }
