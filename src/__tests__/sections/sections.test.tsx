@@ -43,15 +43,9 @@ it("renders art section", () => {
     </ThemeProvider>
   );
   expect(screen.getByText("ART")).toBeInTheDocument();
-  expect(screen.getByText("TITLE")).toBeInTheDocument();
-  expect(screen.getByText("COMPANY")).toBeInTheDocument();
-  expect(screen.getByText("DATE")).toBeInTheDocument();
-  expect(screen.getByText("LOCATION")).toBeInTheDocument();
-  expect(
-    screen.getByText(
-      "Blurb detailing the art and the story behind the piece. Blurb detailing the art and the story behind the piece. Blurb detailing the art and the story.."
-    )
-  ).toBeInTheDocument();
+  expect(screen.getByText("LOST CITY")).toBeInTheDocument();
+  expect(screen.getByText("2007")).toBeInTheDocument();
+  expect(screen.getByText("GOLD COAST")).toBeInTheDocument();
   expect(screen.getByText("VIEW ART")).toBeInTheDocument();
 });
 
