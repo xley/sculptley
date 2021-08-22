@@ -31,7 +31,8 @@
     "eject": "react-scripts eject",
     "up": "docker-compose up --build",
     "down": "docker-compose down",
-    "predeploy": "npm run build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
