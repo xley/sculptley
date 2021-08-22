@@ -6,15 +6,11 @@ export const ArrowIcon = styled(ArrowRightS)`
   color: white;
   height: 4vh;
   border-bottom: 0;
-  align-self: center;
 `;
 
-export const Wrapper = styled.div`
-  margin: 2rem;
-`;
+export const Wrapper = styled.div``;
 
-export const StyledTitle = styled.div<{ firstName: string; lastName: string }>`
-  font-size: 3rem;
+export const StyledTitle = styled.div`
   font-family: sans-serif;
   text-align: left;
 `;
@@ -26,6 +22,7 @@ export const StyledFirstName = styled.h1`
   background-color: ${(props) => props.theme.palette.primary.main};
   font-weight: bold;
   width: fit-content;
+  font-size: 10vw;
 `;
 
 export const StyledLastName = styled.h1`
@@ -35,6 +32,7 @@ export const StyledLastName = styled.h1`
   background-color: ${(props) => props.theme.palette.primary.main};
   font-weight: bold;
   width: fit-content;
+  font-size: 10vw;
 `;
 
 export const StyledSlogan = styled.h2`
@@ -43,14 +41,9 @@ export const StyledSlogan = styled.h2`
   background-color: ${(props) => props.theme.palette.primary.main};
   font-weight: bold;
   width: fit-content;
-  font-size: 3rem;
+  font-size: 5vw;
   font-family: sans-serif;
   text-align: left;
-`;
-
-export const StyledButtonText = styled.p`
-  border-bottom: 1px solid black;
-  font-size: 1.5rem; ;
 `;
 
 export const StyledImage = styled.div`
@@ -58,14 +51,14 @@ export const StyledImage = styled.div`
   background-position: right;
   padding: 18px 2%;
   border: 1px solid black;
-  background-size: auto;
+  background-size: contain;
   background-repeat: no-repeat;
 `;
 
 export const StyledButton = styled.button`
   color: white;
   border: 0;
-  font-size: 1.5rem;
+  font-size: 2vh;
   background-color: transparent;
   border-bottom: 1px solid white;
   align-items: center;
