@@ -52,13 +52,13 @@ export const ChatMailIcon = styled(ChatMail)`
 `;
 
 export const Wrapper = styled.div<{ mobile: boolean }>`
-  margin: 2rem;
+  margin: 1rem;
   display: flex;
   flex-direction: ${(props) => (props.mobile ? "column" : "row")};
 `;
 
 export const SectionHeader = styled.h1<{ mobile: boolean }>`
-  font-size: 5rem;
+  font-size: 7vh;
   font-family: sans-serif;
   text-align: center;
   margin: 1rem;
@@ -73,26 +73,26 @@ export const SectionHeader = styled.h1<{ mobile: boolean }>`
 export const ConnectSection = styled.div`
   border: 1px solid black;
   padding: 1rem;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  width: -webkit-fill-available;
 `;
 
 export const ConnectForm = styled.form`
-  width: auto;
+  width: 100%;
 `;
 
 export const StyledFormInput = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: inherit;
 `;
 
 export const StyledInput = styled.input`
-  font-size: 1.5rem;
+  font-size: 3vh;
   padding: 1rem;
   margin: 1rem;
   border: 1px solid black;
@@ -104,7 +104,7 @@ export const StyledInput = styled.input`
 `;
 
 export const StyledTextArea = styled.textarea`
-  font-size: 1.5rem;
+  font-size: 3vh;
   padding: 1rem;
   margin: 1rem;
   border: 1px solid black;
@@ -119,6 +119,7 @@ export const ConnectLinks = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const StyledEmailLink = styled.a`
@@ -159,7 +160,7 @@ export const StyledSubmitInput = styled.input`
   cursor: pointer;
   background-color: transparent;
   border-bottom: 1px solid black;
-  font-size: 1.5rem;
+  font-size: 3vh;
 `;
 
 export const StyleRecaptchaContainer = styled.div`

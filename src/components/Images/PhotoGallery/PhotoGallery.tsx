@@ -11,7 +11,7 @@ interface IPhotoGalleryProps {
 }
 
 function PhotoGallery({ images }: IPhotoGalleryProps) {
-  return <ImageGallery items={images} autoPlay />;
+  return <ImageGallery items={images} autoPlay useBrowserFullscreen={false} />;
 }
 
 export default PhotoGallery;

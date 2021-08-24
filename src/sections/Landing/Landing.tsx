@@ -18,7 +18,7 @@ function Landing({ scrollTo }: Props) {
   return (
     <Wrapper>
       <StyledImage>
-        <StyledTitle firstName={"BRIAN"} lastName={"CROSSLEY"}>
+        <StyledTitle>
           <StyledFirstName>BRIAN</StyledFirstName>
           <StyledLastName>CROSSLEY</StyledLastName>
         </StyledTitle>

@@ -8,13 +8,13 @@ export const ArrowIcon = styled(ArrowRightS)`
 `;
 
 export const Wrapper = styled.div<{ mobile: boolean }>`
-  margin: 2rem;
+  margin: 1rem;
   display: flex;
   flex-direction: ${(props) => (props.mobile ? "column" : "row")};
 `;
 
 export const SectionHeader = styled.h1<{ mobile: boolean }>`
-  font-size: 5rem;
+  font-size: 7vh;
   font-family: sans-serif;
   text-align: center;
   margin: 1rem;
@@ -32,26 +32,26 @@ export const AboutSection = styled.div`
 `;
 
 export const StyledTitle = styled.h2`
-  font-size: 2rem;
+  font-size: 4vh;
   font-family: sans-serif;
   text-align: center;
 `;
 
 export const StyledBlurb = styled.p`
-  font-size: 1.5rem;
+  font-size: 2.5vh;
   font-family: sans-serif;
   text-align: justify;
   border-left: 1px solid black;
   margin: auto;
   padding: 0 1rem;
   width: 40%;
+  min-width: 250px;
 `;
 
 export const StyledButton = styled.button`
   display: flex;
   align-items: center;
   float: right;
-  margin: 1rem;
   border: none;
   cursor: pointer;
   background-color: transparent;
@@ -62,5 +62,5 @@ export const StyledButton = styled.button`
 
 export const StyledButtonText = styled.p`
   border-bottom: 1px solid black;
-  font-size: 1.5rem;
+  font-size: 2vh;
 `;

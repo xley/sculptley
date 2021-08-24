@@ -174,6 +174,18 @@ function Connect({ connectRef }: Props) {
             />
           </Styles.StyledFormInput>
           <Styles.StyledFormInput>
+            <Styles.EmailIcon />
+            <Styles.StyledInput
+              type="email"
+              placeholder="Email"
+              id="contactEmail"
+              name="contactEmail"
+              value={form.contactEmail}
+              onChange={handleFormChange}
+              required={oneFieldRequired(form.contactPhone)}
+            />
+          </Styles.StyledFormInput>
+          <Styles.StyledFormInput>
             <Styles.PhoneIcon />
             <Styles.StyledInput
               type="tel"
@@ -184,18 +196,6 @@ function Connect({ connectRef }: Props) {
               value={form.contactPhone}
               onChange={handleFormChange}
               required={oneFieldRequired(form.contactEmail)}
-            />
-          </Styles.StyledFormInput>
-          <Styles.StyledFormInput>
-            <Styles.EmailIcon />
-            <Styles.StyledInput
-              type="email"
-              placeholder="Email"
-              id="contactEmail"
-              name="contactEmail"
-              value={form.contactEmail}
-              onChange={handleFormChange}
-              required={oneFieldRequired(form.contactPhone)}
             />
           </Styles.StyledFormInput>
           <Styles.StyledFormInput>
