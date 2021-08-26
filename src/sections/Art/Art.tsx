@@ -35,10 +35,8 @@ function Art() {
             <StyledDetail>GOLD COAST</StyledDetail>
           </StyledDetailDiv>
           <StyledBlurb>
-            Blurb detailing the art and the story behind the piece. Blurb
-            detailing the art and the story behind the piece. Blurb detailing
-            the art and the story. Blurb detailing the art and the story behind
-            the piece. Blurb detailing ....
+            Decorated and designed an ancient Egypt themed Gaming room for a
+            hotel/pub
           </StyledBlurb>
           <StyledButton onClick={handleViewArt}>
             <StyledButtonText>VIEW ART</StyledButtonText> <ArrowIcon />

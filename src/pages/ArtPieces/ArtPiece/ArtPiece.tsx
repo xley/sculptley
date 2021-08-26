@@ -10,15 +10,30 @@ import {
   Wrapper,
 } from "./ArtPiece.style";
 import { useHistory } from "react-router-dom";
-import { PhotoGallery } from "../../../components/Images/PhotoGallery";
-import { images } from "./Images";
+import { carouselImages, photoGalleryImages } from "./Images";
+import Gallery from "react-photo-gallery";
+import { useRef } from "react";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
+import ReactImageGallery from "react-image-gallery";
 
 function ArtPiece() {
   let history = useHistory();
+  let carouselRef = useRef<ReactImageGallery>(null);
 
   function handleBack() {
     history.goBack();
   }
+
+  const handlePhotoClick = async (event: any) => {
+    const imgIndex = carouselImages.findIndex(
+      (img) => img.original === event.target.getAttribute("src")
+    );
+    if (carouselRef.current) {
+      carouselRef.current.slideToIndex(imgIndex);
+      carouselRef.current.fullScreen();
+    }
+  };
 
   return (
     <Wrapper>
@@ -37,11 +52,18 @@ function ArtPiece() {
         <StyledDetail>ENTERTAINMENT CENTER</StyledDetail>
       </StyledDetails>
       <StyledBlurb>
-        Blurb detailing the art and the story behind the piece. Blurb detailing
-        the art and the story behind the piece. Blurb detailing the art and the
-        story..
+        Decorated and designed an ancient Egypt themed Gaming room for a
+        hotel/pub
       </StyledBlurb>
-      <PhotoGallery images={images} />
+      <Gallery
+        photos={photoGalleryImages}
+        onClick={(e: any) => handlePhotoClick(e)}
+      />
+      <ImageGallery
+        useBrowserFullscreen={false}
+        ref={carouselRef}
+        items={carouselImages}
+      />
     </Wrapper>
   );
 }

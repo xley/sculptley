@@ -23,7 +23,7 @@ import racing01 from "../../../assets/images/LostCity/racing-01.jpeg";
 import station01 from "../../../assets/images/LostCity/station-01.jpeg";
 import station02 from "../../../assets/images/LostCity/station-02.jpeg";
 
-export const images = [
+export const carouselImages = [
   {
     original: aztec01,
     thumbnail: aztec01,
@@ -119,5 +119,128 @@ export const images = [
   {
     original: station02,
     thumbnail: station02,
+  },
+];
+
+export const photoGalleryImages = [
+  {
+    width: 1,
+    height: 1,
+    src: aztec01,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: aztec02,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: aztec03,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: aztec04,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: bar01,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: club01,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: club02,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: club03,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: club04,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: dining01,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: dining02,
+  },
+  {
+    width: 1.1,
+    height: 1,
+    src: dining03,
+  },
+  {
+    width: 1.2,
+    height: 1,
+    src: entrance01,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: entrance04,
+  },
+  {
+    width: 1.2,
+    height: 1,
+    src: gaming01,
+  },
+  {
+    width: 1.3,
+    height: 1,
+    src: gaming02,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: gaming03,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: gaming04,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: gaming05,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: gaming06,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: gaming08,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: racing01,
+  },
+  {
+    width: 1.3,
+    height: 1,
+    src: station01,
+  },
+  {
+    width: 1,
+    height: 1,
+    src: station02,
   },
 ];

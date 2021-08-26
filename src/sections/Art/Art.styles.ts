@@ -34,9 +34,11 @@ export const ArtSection = styled.div`
   background-size: cover;
   background-position: center;
   display: flex;
+  width: -webkit-fill-available;
 `;
 
 export const ArtSectionDetails = styled.div`
+  width: inherit;
   padding: 1rem 0;
   background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
   color: ${(props) => props.theme.palette.primary.main};
