@@ -1,17 +1,18 @@
-import ImageGallery from "react-image-gallery";
+import Gallery from "react-photo-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
-export interface ImageGalleryItem {
-  original: string;
-  thumbnail: string;
+export interface PhotoGalleryItem {
+  src: string;
+  width: number;
+  height: number;
 }
 
 interface IPhotoGalleryProps {
-  images: ImageGalleryItem[];
+  images: PhotoGalleryItem[];
 }
 
 function PhotoGallery({ images }: IPhotoGalleryProps) {
-  return <ImageGallery items={images} autoPlay useBrowserFullscreen={false} />;
+  return <Gallery photos={images} />;
 }
 
 export default PhotoGallery;
