@@ -210,13 +210,15 @@ function Connect({ connectRef }: Props) {
               required
             />
           </Styles.StyledFormInput>
-          <Styles.StyleRecaptchaContainer>
-            <ReCAPTCHA
-              sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY || ""}
-              onChange={onRecaptchaChange}
-              onErrored={onRecaptchaError}
-            />
-          </Styles.StyleRecaptchaContainer>
+          {process.env.REACT_APP_RECAPTCHA_SITE_KEY && (
+            <Styles.StyleRecaptchaContainer>
+              <ReCAPTCHA
+                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                onChange={onRecaptchaChange}
+                onErrored={onRecaptchaError}
+              />
+            </Styles.StyleRecaptchaContainer>
+          )}
           <Styles.StyledSubmitButton>
             <Styles.StyledSubmitInput
               type="submit"
