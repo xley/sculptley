@@ -14,13 +14,15 @@ import {
 } from "./Art.styles";
 import { useHistory } from "react-router-dom";
 import useCheckMobileScreen from "../../hooks/mobile/useCheckMobileScreen";
+import { LostCity } from "../../art/LostCity/LostCity";
 
 function Art() {
   let history = useHistory();
   let mobile = useCheckMobileScreen();
+  let art = LostCity;
 
   function handleViewArt() {
-    history.push("/art");
+    history.push(`/art/${art.route}`);
   }
 
   return (
@@ -28,16 +30,13 @@ function Art() {
       <SectionHeader mobile={mobile}>ART</SectionHeader>
       <ArtSection>
         <ArtSectionDetails>
-          <StyledTitle>LOST CITY</StyledTitle>
+          <StyledTitle>{art.title}</StyledTitle>
           <StyledCompany></StyledCompany>
           <StyledDetailDiv>
-            <StyledDetail>2007</StyledDetail>
-            <StyledDetail>GOLD COAST</StyledDetail>
+            <StyledDetail>{art.date}</StyledDetail>
+            <StyledDetail>{art.location}</StyledDetail>
           </StyledDetailDiv>
-          <StyledBlurb>
-            Decorated and designed an ancient Egypt themed Gaming room for a
-            hotel/pub
-          </StyledBlurb>
+          <StyledBlurb>{art.blurb}</StyledBlurb>
           <StyledButton onClick={handleViewArt}>
             <StyledButtonText>VIEW ART</StyledButtonText> <ArrowIcon />
           </StyledButton>
