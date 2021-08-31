@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ArtPiece from "./pages/ArtPieces/ArtPiece/ArtPiece";
+import ArtPieces from "./pages/ArtPieces/ArtPieces";
 
 toast.configure();
 function App() {
@@ -17,9 +17,7 @@ function App() {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/art">
-          <ArtPiece />
-        </Route>
+        <ArtPieces />
         <Route path="/">
           <Redirect to="/home" />
         </Route>
